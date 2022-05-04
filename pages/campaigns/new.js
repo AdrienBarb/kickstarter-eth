@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { Button, Checkbox, Form, Input, Message } from "semantic-ui-react";
 import factory from '../../ethereum/factory'
 import web3 from '../../ethereum/web3'
+import {Link, Router} from '../../routes'
 
 const newCampaign = () => {
 
@@ -18,7 +19,7 @@ const newCampaign = () => {
     try {
       const accounts = await web3.eth.getAccounts()
       await factory.methods.createCampaign(minimumContribution).send({from: accounts[0]})
-      
+      Router.push('/')
     } catch (err) {
       setErrorMessage(err.message)
     }
