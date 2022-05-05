@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Button, Checkbox, Form, Input, Message } from "semantic-ui-react";
 import { getCampaign } from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
+import {Link, Router} from '../routes'
 
 const ContributeForm = ({address}) => {
 const [contribution, setContribution] = useState('')
